@@ -12,6 +12,16 @@ import Model.Agendamento;
 import java.util.ArrayList;
 
 public class AgendamentoDAO {
+
+    public AgendamentoDAO() {
+    }
+    
+    
+    
+    
+    
+    
+    
     
      public void insert(Agendamento agendamento){
           

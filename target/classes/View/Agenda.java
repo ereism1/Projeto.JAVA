@@ -11,6 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+import Model.DAO.Banco;
+import javax.swing.JTextField;
 
 /**
  *
@@ -27,8 +29,10 @@ public class Agenda extends javax.swing.JFrame {
      */
     public Agenda(){
         initComponents();
-        controller = new AgendaController(this);
+        this.controller = new AgendaController(this);
+        Banco.inicia();
         iniciar();
+        
     }
 
     /**
@@ -60,7 +64,7 @@ public class Agenda extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTextField4.addActionListener(new java.awt.event.ActionListener() {
@@ -238,7 +242,9 @@ public class Agenda extends javax.swing.JFrame {
     this.controller.atualizaTabela();
     this.controller.atualizaCliente();
     this.controller.atualizarServico();
+    this.controller.atualizarValor();
     }
+    
 
     public JTable getjTable1() {
         return jTable1;
@@ -263,6 +269,16 @@ public class Agenda extends javax.swing.JFrame {
     public void setCOMBOBOXServico(JComboBox<String> COMBOBOXServico) {
         this.COMBOBOXServico = COMBOBOXServico;
     }
+
+    public JTextField getjTextField2() {
+        return jTextField2;
+    }
+
+    public void setjTextField2(JTextField jTextField2) {
+        this.jTextField2 = jTextField2;
+    }
+    
+    
     
     
 }

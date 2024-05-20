@@ -10,6 +10,8 @@ package Model;
  */
 public class Usuario extends Pessoa {
 
+   
+
     private String senha;
     private String nivelAcesso;
     

@@ -13,7 +13,6 @@ import Model.Agendamento;
 import Model.Cliente;
 import Model.Servico;
 import Model.Usuario;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Banco {
@@ -24,7 +23,7 @@ public class Banco {
     public static ArrayList<Agendamento> agendamento;
     
     
-    public static void inicia() throws ParseException{
+    public static void inicia() {
     
         //Instancia os Objetos
         usuario = new ArrayList<>();

@@ -32,7 +32,7 @@ public class AgendaHelper {
       DefaultTableModel tableModel = (DefaultTableModel) View.getjTable1().getModel();
         tableModel.setNumRows(0);
         //percorrer a lista preenchendo o table model
-        for (Agendamento agendamento : agendamento){
+        for (Agendamento agendamento : agendamentos){
             tableModel.addRow(new Object[]{
                 
                 agendamento.getId(),
@@ -51,9 +51,10 @@ public class AgendaHelper {
 
     public void preencherClientes(ArrayList<Cliente> clientes) {
         DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) View.getCOMBOBOXCliente().getModel();
-     
+        comboBoxModel.removeAllElements();
+        
       for (Cliente cliente : clientes) {
-          comboBoxModel.addElement(Cliente);
+          comboBoxModel.addElement(cliente);
       }
     }
 
@@ -61,10 +62,19 @@ public class AgendaHelper {
        DefaultComboBoxModel comboBoxModel = (DefaultComboBoxModel) View.getCOMBOBOXServico().getModel();
     
     for (Servico servico : servicos){
-        comboBoxModel.addElement(Servico);
+        comboBoxModel.addElement(servico);
     }
     
     }
+
+    public Servico obterServico() {
+        return (Servico) View.getCOMBOBOXServico().getSelectedItem();
+    }
+
+    public void setarValor(float valor) {
+    View.getjTextField2().setText(valor + "");
+    }
+    
     
     
     
